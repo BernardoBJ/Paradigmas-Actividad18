@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Actividad 18</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="row justify-content-md-center">
+            <div class="col-10">
+                <!-- Encabezado -->
+                <div class="jumbotron">
+                    <h1 class="display-4">{{titulo}}</h1>
+                    <h5>{{alumno}} - {{matricula}}</h5>
+                    <ul>
+                        <li v-for="instruccion in instrucciones">
+                            {{instruccion}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4" style="margin-bottom: 10px;" v-for="user in users">
+                        <div class="card bg-light">
+                            <div class="card-header bg-info">
+                                {{user.company.name}}
+                                <span class="pull-right">{{user.username}}</span>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="lead"><b>{{user.name}}</b></h2>
+                                        <p class="text-muted text-sm">{{user.email.toLowerCase()}}</p>
+                                        <ul class="ml-4 mb-0 fa-ul text-muted">
+                                            <li class="small">
+                                                <span class="fa-li">
+                                                    <i class="fa fa-lg fa-building"></i>
+                                                </span>
+                                                <b>Address:</b><br>
+                                                {{user.address.street}} {{user.address.suite}}, {{user.address.city}} {{user.address.zipcode}}</li>
+                                            <li class="small">
+                                                <span class="fa-li">
+                                                    <i class="fa fa-lg fa-phone"></i>
+                                                </span>
+                                                Phone #: {{user.phone}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-5 text-center">
+                                        <img src="images/user.png" alt="" class="img-circle img-fluid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
